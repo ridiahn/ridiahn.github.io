@@ -2,7 +2,4 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-vendor
-sass:
-  sass_dir: _sass
-  style: compressed
+vendor/bundle
