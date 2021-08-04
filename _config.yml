@@ -11,12 +11,10 @@
 # If you need help with YAML syntax, here are some quick references for you: 
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
-#
+
+
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+locale: "ko-KR"
 title: lidi's D&D Lab
 email: hi.heeraahn@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -25,11 +23,24 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ridiahn.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  lidiahn
 
+# Thme Settings
+minimal_mistakes_skin   : "dirt"
+
+# Defaults
+defaults:
+  scope:
+  values:
+    author_profile: false #프로필 노출(기본값:ture)
+
 # Build settings
 theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+
+sass:
+  sass_dir: _sass
+  style: compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -50,6 +61,3 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-sass:
-  sass_dir: _sass
-  style: compressed
