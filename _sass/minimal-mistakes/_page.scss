@@ -669,3 +669,9 @@ body {
     }
   }
 }
+
+.page__content{
+  h3:first-of-type{
+    margin-top: 0;
+  }
+}
