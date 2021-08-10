@@ -253,7 +253,7 @@ body {
   margin-top: 2em;
   padding-top: 1em;
   border-top: 1px solid $border-color;
-
+ 
   @include breakpoint(max-width $small) {
     .btn span {
       border: 0;
@@ -269,7 +269,7 @@ body {
 }
 
 .page__share-title {
-  margin-bottom: 10px;
+  margin-bottom: 0;
   font-size: $type-size-6;
   text-transform: uppercase;
 }
@@ -303,6 +303,15 @@ body {
   content: "\2022";
   padding-left: 0.5em;
   padding-right: 0.5em;
+}
+
+/*
+   Page date
+   ========================================================================== */
+.page__date{
+  color: $muted-text-color;
+  font-family: $sans-serif;
+  font-size: $type-size-6;
 }
 
 /*
@@ -401,6 +410,7 @@ body {
   text-align: right;
   text-decoration: none;
 }
+
 
 /*
    Comments
@@ -554,6 +564,108 @@ body {
 
     @include breakpoint($x-large) {
       padding-right: 0;
+    }
+  }
+}
+
+/*
+   customize
+   ========================================================================== */
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  float: unset !important;
+}
+.page__inner-wrap > header{
+  border-bottom: solid 1px #efefef;
+  margin-bottom: 2rem;
+
+  >p.tag-list{
+    display: none;
+    width: 0;
+  }
+
+  .page__date{
+    font-size: $type-size-7;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.category-list{
+  margin-bottom: 2rem;
+  > strong{
+    font-size: 0;
+    margin-right: 0;
+
+    &::before{
+      content: "";
+      width: 30px;
+      height: 2px;
+      display: block;
+      background-color: black;
+    }
+  }
+  .page__taxonomy-item {
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+  }
+}
+
+.tag-list{
+  width: 70%;
+  display: inline-flex;
+  align-items: center;
+
+  > strong{
+    font-size:0.625rem;
+
+    i{
+      font-size: 0;
+    }
+  }
+
+  .page__taxonomy-item {
+    font-size: $type-size-6;
+    margin-bottom: 0;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 0;
+    background-color: #efefef;
+    border-radius: 2rem;
+  }
+}
+
+.page__meta{
+  &.flex{
+    justify-content: space-between;
+  }
+}
+
+.page__share {
+  float: unset !important;
+  width: unset !important;
+  display: inline-block;
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+
+  .page__share-title{
+    margin-top: 0;
+    display: inline-block;
+    font-size: 0.625rem;
+  }
+
+  a.btn{
+    background: none;
+    color: #999;
+    padding: 0.5rem 0.25rem;
+    i {
+      font-size:$type-size-3; 
+    }
+    i + span{
+      font-size: 0;
     }
   }
 }

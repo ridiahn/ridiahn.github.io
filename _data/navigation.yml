@@ -1,7 +1,17 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "UX/UI"
+    url: ""
+
+  - title: "Design"
+    url: ""
+
+  - title: "Dev"
+    url: ""
+
+  - title: "Project"
+    url: ""
+  
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"

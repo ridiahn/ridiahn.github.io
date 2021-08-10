@@ -461,3 +461,23 @@
 		display: inline-block;
 	}
 }
+
+/*
+   customize
+   ========================================================================== */
+
+.page__related{
+  border-top: none;
+  margin-top: 0;
+  .grid__item{
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    
+    @include breakpoint($small) {
+      width: unset;
+    }
+  }
+}
