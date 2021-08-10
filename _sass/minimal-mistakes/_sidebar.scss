@@ -348,31 +348,40 @@
 /*
    customize
    ========================================================================== */
-   .namecard{
-  width: 100%;
-  margin-top: 1rem;
-  border: solid 1px #eee;
-  border-radius: 4px;
-  box-sizing: border-box;
-  padding: 12px 20px;
+.layout--single-col{
+  .namecard{
+    width: 100%;
+    margin-top: 1rem;
+    border: solid 1px #eee;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 12px 20px;
 
-  >div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-    @include breakpoint($large) {
-      display: unset;
+    >div{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    
+      @include breakpoint($large) {
+        display: unset;
+      }
+    }
+
+    .author__content{
+      padding: 0;
+    }
+
+    .author__urls{
+      li{
+        display: inline-block;
+      }
     }
   }
 
-  .author__content{
-    padding: 0;
-  }
-
-  .author__urls{
-    li{
-      display: inline-block;
+  .sidebar__right{
+    @include breakpoint($large) {
+      width: 200px;
+      margin-top: -200px;
     }
   }
 }

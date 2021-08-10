@@ -571,10 +571,10 @@
 /*
    customize
    ========================================================================== */
-
-   .toc{
-     border-left: solid 1px #efefef;
-     header{
+.layout--single-col{
+  .toc{
+    border-left: solid 1px #efefef;
+      header{
       font-size: 0.625rem;
       .nav__title{
         font-size: 0.625rem;
@@ -604,4 +604,8 @@
         border-left: solid 1px $text-color;
       }
     }
-   }
+  }
+  .page__meta + .pagination{
+    padding-bottom: 2em;
+  }
+}

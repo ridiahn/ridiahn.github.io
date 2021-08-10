@@ -83,3 +83,15 @@
     }
   }
 }
+
+/*
+   customize
+   ========================================================================== */
+.layout--single-col{
+  .page__footer{
+    border-top: solid 1px #efefef;
+    margin-top: 0;
+    text-align: center;
+    background-color: white;
+  }
+}
