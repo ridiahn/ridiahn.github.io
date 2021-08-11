@@ -10,5 +10,18 @@
 
     #utterances-comments{
       
+      >.utterances{
+        @include breakpoint($large){
+          margin-left: 2em;
+        }
+      }
+
+      .utterances-frame{
+        .timeline-comment{
+          .new-comment-header{
+            background-color : transparent;
+          }
+        }
+      }
     }
   }

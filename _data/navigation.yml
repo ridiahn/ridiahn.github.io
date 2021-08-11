@@ -1,16 +1,16 @@
 # main links
 main:
   - title: "UX/UI"
-    url: ""
+    url: /ux/
 
   - title: "Design"
-    url: ""
+    url: "/den/"
 
   - title: "Dev"
-    url: ""
+    url: "/dev/"
 
   - title: "Project"
-    url: ""
+    url: "/proj/"
   
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
