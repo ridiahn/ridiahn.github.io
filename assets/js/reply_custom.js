@@ -1,4 +1,4 @@
-import jQuery from "jquery";
+import jQuery from "./vendor/jquery/jquery-3.5.1";
 window.$ = window.jQuery = jQuery;
 
 var _iframe = $('.utterances-comments iframe');
