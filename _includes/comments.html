@@ -151,6 +151,7 @@
         {% endif %}
       </section>
     {% when "utterances" %}
+      {% include assets/js/_reply.coustom.js %}
       <h4 class="page__comments-title">{{ comments_label }}</h4>
       <section id="utterances-comments"></section>
     {% when "giscus" %}

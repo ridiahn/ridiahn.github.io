@@ -14,7 +14,6 @@
     script.setAttribute('issue-term', '{{ site.comments.utterances.issue_term | default: "pathname" }}');
     script.setAttribute('theme', '{{ site.comments.utterances.theme | default: "github-light" }}');
     script.setAttribute('crossorigin', 'anonymous');
-    script.setAttribute('src', '{{ "/./assets/js/_reply.coustom.js" | relative_url }}');
     
     commentContainer.appendChild(script);
   })();
