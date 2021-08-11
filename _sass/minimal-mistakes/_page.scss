@@ -705,4 +705,20 @@ body {
       margin-top: 0;
     }
   }
+
+  .page__comments{
+    .page__comments-title{
+      font-size: 0;
+      margin: 0;
+      padding-top: 1em;
+    }
+  
+    #utterances-comments{
+      >.utterances{
+        @include breakpoint($large){
+          margin-left: 2em;
+        }
+      }
+    }
+  }
 } 
