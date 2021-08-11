@@ -490,6 +490,7 @@
       overflow: hidden;
       padding: 0.5rem 1rem;
       box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+      margin: 0;
 
       @include breakpoint($small) {
         width: unset;

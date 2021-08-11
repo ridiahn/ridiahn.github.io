@@ -568,7 +568,7 @@ body {
   }
 }
 
-/*
+  /*
    customize
    ========================================================================== */
 
@@ -703,6 +703,17 @@ body {
   .page__content{
     h3:first-of-type{
       margin-top: 0;
+    }
+  }
+
+  /*
+   comment-customize
+   ========================================================================== */
+
+  .page__comments{
+    .page__comments-title{
+      font-size: 0;
+      margin: 0;
     }
   }
 } 
