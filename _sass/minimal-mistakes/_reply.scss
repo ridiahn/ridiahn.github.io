@@ -6,6 +6,7 @@
     .page__comments-title{
       font-size: 0;
       margin: 0;
+      padding-top: 1em;
     }
 
     #utterances-comments{
@@ -13,14 +14,6 @@
       >.utterances{
         @include breakpoint($large){
           margin-left: 2em;
-        }
-      }
-
-      .utterances-frame{
-        .timeline-comment{
-          .new-comment-header{
-            background-color : transparent;
-          }
         }
       }
     }
