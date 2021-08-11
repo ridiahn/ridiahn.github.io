@@ -1,4 +1,9 @@
-<script src="./vendor/jquery/jquery-3.5.1"></script>
-$("iframe").one("load", function() {
-  $("iframe").contents().find("h1.timeline-header").css( "padding-left", "0");
-})
+window.onload = function(){
+  // alert("연결성공");
+  const _iframe = document.getElementsByClassName('utterances-frame')[0];
+  
+  iframe1.addEventListener('load', e => {  
+    let cs1 = document.querySelector("h1.timeline-header");
+    cs1.style.paddingLeft = "0";
+  })
+}
