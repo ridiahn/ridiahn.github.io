@@ -87,11 +87,53 @@
 /*
    customize
    ========================================================================== */
-.layout--single-col{
-  .page__footer{
-    border-top: solid 1px #efefef;
-    margin-top: 0;
-    text-align: center;
-    background-color: white;
+
+.page__footer{
+  border-top: solid 1px #efefef;
+  margin-top: 0;
+  text-align: center;
+  background-color: white;
+  
+  footer{
+    margin-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .page__footer-follow{
+    .social-icons{
+      text-align: right;
+      
+      strong{
+        font-size: 0;
+      }
+      
+      li{
+        margin-bottom: 0;
+        padding: 0;
+        &::before{
+          padding: 0;
+        }
+
+        a{
+          font-size: 0;
+          padding: 0;
+          width: 40px;
+          height: 40px;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          i{
+            font-size: 1rem;
+          }
+        }
+      }
+
+    }
+  }
+
+  .page__footer-copyright{
+    text-align: right;
+    font-size: 0.625rem;
+    color: #ccc;
   }
 }
