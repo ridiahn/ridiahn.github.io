@@ -5,5 +5,5 @@ window.onload = function(){
     alert("연결");
     let cs1 = document.querySelector("h1.timeline-header");
     cs1.style.paddingLeft = "0";
-  })
+  }
 }
