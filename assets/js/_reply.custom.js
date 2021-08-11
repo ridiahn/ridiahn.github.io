@@ -1,3 +1,3 @@
 window.onload = function(){
-  console.log("실행")
+  alert("연결성공");
 }
