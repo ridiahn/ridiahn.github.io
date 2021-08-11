@@ -1,5 +1,4 @@
-var $;
-$ = require('jquery');
+window.$ = window.jQuery = require('jquery');
 
 var _iframe = $('.utterances-comments iframe');
 $(_iframe).on("load", function() {
