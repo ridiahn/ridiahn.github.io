@@ -1,5 +1,4 @@
-import * as $ from 'jquery'
-window.$ = window.jQuery = jQuery;
+var $ = window.jQuery;
 
 var _iframe = $('.utterances-comments iframe');
 $(_iframe).on("load", function(e) {
