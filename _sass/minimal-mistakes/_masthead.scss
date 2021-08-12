@@ -96,16 +96,19 @@
    customize
    ========================================================================== */
 .masthead{
+  margin: 0;
+
   .masthead__inner-wrap{
     max-width: 100%;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
     
     .site-subtitle{
       font-size: 0;
     }
 
     #site-nav{
+      padding: 0 1em;
+      
       ul.visible-links{
         height: 54px;
         line-height: 54px;

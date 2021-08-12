@@ -105,11 +105,9 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "흐름을 읽고 잡고 따라가는 Context Designer"
   location         : "South Korea"
-  email            :
+  email            : "hi.heeraahn@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "hi.heeraahn@gmail.com"
+
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -129,13 +127,9 @@ author:
 # Site Footer
 footer:
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      mailto: hi.heeraahn@gmail.com
-
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/ridiahn"
+      #url: ""
     
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
@@ -286,7 +280,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single-col
+      layout: mysingle
       author_profile: true
       read_time: true
       comments: true

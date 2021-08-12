@@ -91,48 +91,98 @@
 .page__footer{
   border-top: solid 1px #efefef;
   margin-top: 0;
-  text-align: center;
-  background-color: white;
+  background-color: transparent;
   
   footer{
-    margin-top: 1em;
-    padding-bottom: 1em;
+    margin-top: 2em;
+    box-sizing: border-box;
   }
 
-  .page__footer-follow{
-    .social-icons{
-      text-align: right;
-      
-      strong{
-        font-size: 0;
+  .namecard{
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+
+    .author__content{
+      font-size: 0.625rem;
+      float: left;
+      text-align: left;
+      width: 50%;
+
+      h3{
+        margin-top: 0.5em;
+        font-size: 0.875rem;
+        display: inline;
+        color: black;
       }
       
-      li{
-        margin-bottom: 0;
-        padding: 0;
+      .location{
+        color: #999;
+        display: inline;
+        margin: 0.25em 0;
+
         &::before{
-          padding: 0;
+          content: ",";
         }
-
-        a{
-          font-size: 0;
-          padding: 0;
-          width: 40px;
-          height: 40px;
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          i{
-            font-size: 1rem;
-          }
+        i{
+          color: inherit;
         }
       }
+      .author__bio{
+        margin: 0.75em 0 2em;
 
+        p{
+          font-size: 0.625rem;
+          margin: 0;
+          color: black;
+        }
+      }
+    }
+
+  .author__urls{
+    float: right;
+    text-align: right;
+
+    li{
+      margin-bottom: 0;
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: black;
+      margin-left: 0.5em;
+      float: left;
+
+      &:last-of-type{
+        visibility: hidden;
+        width: 0;
+      }
+
+      a{
+        padding: 0.5rem;
+        margin: 0;
+        font-size: 0;
+
+        > span{
+          font-size: inherit;
+          position: absolute;
+          z-index: -1;
+        }
+
+        > i{
+          font-size: 0.75rem;
+          color: white;
+        }
+      }
     }
   }
+}
 
   .page__footer-copyright{
     text-align: right;
+    margin-top: -2em;
     font-size: 0.625rem;
     color: #ccc;
   }
