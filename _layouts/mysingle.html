@@ -35,15 +35,6 @@ layout: default
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
-      {% if page.toc %}
-      <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
-        <nav class="toc">
-          <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
-          {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
-        </nav>
-      </aside>
-      {% endif %}
-
       <footer class="page__meta flex">
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
@@ -57,11 +48,19 @@ layout: default
 
       {% include post_pagination.html %}
     </div>
-
     {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
       {% include comments.html %}
     {% endif %}
   </article>
+
+  {% if page.toc %}
+  <aside class="sidebar__right">
+    <nav class="toc {% if page.toc_sticky %}sticky{% endif %}">
+      <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'stream' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
+      {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
+    </nav>
+  </aside>
+  {% endif %}
 
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
@@ -88,3 +87,4 @@ layout: default
     </div>
   {% endif %}
 </div>
+<script src="{{ './assets/js/mysingle.js' | relative_url }}"></script>

@@ -351,8 +351,7 @@
 .layout--mysingle{
   .sidebar__right{
     @include breakpoint($large) {
-      width: 200px;
-      margin-top: -200px;
+      position: unset;
     }
   }
 }

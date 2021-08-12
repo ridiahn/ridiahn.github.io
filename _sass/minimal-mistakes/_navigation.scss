@@ -574,24 +574,22 @@
 .layout--mysingle{
   .toc{
     border-left: solid 1px #efefef;
+    border-radius: 0;
+
       header{
       font-size: 0.625rem;
+      
       .nav__title{
         font-size: 0.625rem;
+        padding: 0 0 0.5em 0.75em;
         font-weight: bold;
-        color: $text-color;
-
-        &::before{
-          content: "📑 ";
-        }
-        i{
-          display: none;
-        }
+        color: #999;
       }
     }
 
     .toc__menu{
       a{
+        padding-left: 1.5em;
         font-weight: normal;
         font-size: 0.625rem;
         color: mix(#fff, $text-color, 50%);
@@ -606,6 +604,51 @@
     }
   }
   .page__meta + .pagination{
+    margin-top: 1em;
+    padding-top: 0;
     padding-bottom: 2em;
+    border-top: 0;
+
+    .pagination--pager{
+      font-size: 0.625rem;
+      font-weight: normal;
+      color: #999;
+      padding: 0.75em 1.5em;
+      border-color: #e2e2e2;
+
+      &:hover{
+        background-color: unset;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+        color: $primary-color;
+        span{
+          color: $text-color;
+        }
+      }
+
+      span{
+        display: block;
+        font-weight: bold;
+        font-size: .875rem;
+        color: #999;
+      }
+
+      &:first-of-type{
+        text-align: left;
+        &::before{
+          content: "←";
+          margin-right: 0.5em;
+        }
+      }
+      
+      &:last-of-type{
+        text-align: right;
+        &::before{
+          content: "→";
+          display: inline-block;
+          float: right;
+          margin-left: 0.5em;
+        }
+      }
+    }
   }
 }

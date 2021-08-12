@@ -593,29 +593,76 @@ body {
 
 .layout--mysingle{
   #main{
-    @include breakpoint($large) {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    .page{
+      width: 100%;
+    }
+
+    .page__related{
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: -300px;
+      visibility: hidden;
+      transition: left 0.3s;
+    }
+
+    .page__related.archive{
+      left: 300px;
+    }
+
+    .sidebar__right{
+      padding-top: 0.5em;
+
+      @media screen and (min-width:$medium){
+        padding-top: 2em;
+      }
+    }
+
+    @include breakpoint($medium){
+      padding-left: 2em;
+      .page{
+        max-width: calc( 100% - 200px );
+        width: 85%;
+      }
+
+      .sidebar__right{
+        max-width: 180px;
+        margin-left: 1em;
+        width: 15%;
+      }
+    }
+
+    @include breakpoint($large){
       padding: 0;
       max-width: 100%;
-      display: flex;
-      flex-direction: row-reverse;
-    }
-  }
 
-  .page{
-    @include breakpoint($large) {
-      width: calc(100% - 300px);
-      padding-right: 0;
-    }
+      .page__related{
+        position: relative;
+        visibility: visible;
+        order: 1;
+        width: 300px;
+        height: unset;
+        left: 0;
+      }
 
-    .page__inner-wrap{
-      @include breakpoint($large) {
-       margin-left: 2em;
-       display: flex;
-       flex-wrap: wrap;
-       
-       >*:not(.sidebar__right){
-         width: calc( 100% - 250px);
-       }
+      .page{
+        order: 2;
+        width: calc( 100% - 550px );
+        padding-right: 0;
+        box-sizing: border-box;
+
+        .page__inner-wrap{
+          padding-left: 2em;
+        }
+      }
+
+      .sidebar__right{
+        order: 3;
+        width: 250px;
       }
     }
   }

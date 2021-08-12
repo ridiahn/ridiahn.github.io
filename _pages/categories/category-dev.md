@@ -1,5 +1,5 @@
 ---
-title: "Design"
+title: "Development"
 layout: archive
 permalink: categories/dev
 author_profile: true
