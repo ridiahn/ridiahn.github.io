@@ -4,7 +4,15 @@ var rightSide = document.getElementsByClassName("sidebar__right")[0];
 var _page = document.getElementsByClassName("page")[0];
 var pageHeader = document.getElementsByClassName("page__inner-wrap")[0].getElementsByTagName("header")[0];
 
-window.onresize = function(e){
+window.onload = function(){
+  postioningToc();
+}
+
+window.onresize = function(){
+  postioningToc();
+};
+
+function postioningToc(){
   var screenWidth = window.innerWidth;
   if( screenWidth <= bp ){
     /*tablet screen*/
@@ -13,4 +21,4 @@ window.onresize = function(e){
     /*desktop screen*/
     _page.after(rightSide);
   }
-};
+}

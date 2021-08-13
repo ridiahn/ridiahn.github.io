@@ -1,3 +1,4 @@
+
 {% assign cat = page.categories[0] %}
 {% assign cat_list = site.categories[cat] %}
 {% for post in cat_list %}
@@ -21,14 +22,28 @@
         <span>{{prev_post.title }}</span>
       </a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}
+        <span class="disabled">이전글이 없습니다</span>
+      </a>
     {% endif %}
     {% if next_post %}
       <a href="{{ next_post.url }}" class="pagination--pager">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}
         <span>{{next_post.title }}</span>
       </a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}
+        <span class="disabled">다음글이 없습니다</span>
+      </a>
     {% endif %}
   </nav>
+  {% else %}
+    <div class="pagination_disabled">다른글이 없습니다</div>
 {% endif %}
+
+<!-- {% if page.previous_in_category %}
+  <a href="{{ page.previous_in_category.url }}">{{ page.previous_in_category.title }}</a>
+{% endif %}
+
+{% if page.next_in_category %}
+  <a href="{{ page.next_in_category.url }}">{{ page.next_in_category.title }}</a>
+{% endif %} -->
