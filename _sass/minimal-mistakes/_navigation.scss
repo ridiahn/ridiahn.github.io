@@ -607,9 +607,9 @@
   .pagination_disabled{
     font-size: 0.75rem ;
     text-align: center;
-    border: solid 1px #efefef;
+    border-top: solid 1px #efefef;
     margin: 1em 0 2em;
-    padding: 1.5em 1em;
+    padding: 3em 1em 2em;
     color: #ccc;
     border-radius: 4px;
   }
@@ -624,9 +624,9 @@
       font-size: 0.625rem;
       font-weight: normal;
       color: #999;
-      padding: 0.75em 1.5em;
+      padding: 1.25em 1.5em;
       border-color: #e2e2e2;
-      height: 64px;
+      min-height: 68px;
       display: inline-flex;
       flex-direction: column;
       justify-content: center;
@@ -644,8 +644,8 @@
       span{
         display: block;
         font-weight: bold;
-        font-size: .875rem;
-        color: #999;
+        font-size: .75rem;
+        color: $muted-text-color;
 
         &.disabled{
           font-weight: normal;

@@ -466,29 +466,54 @@
    customize
    ========================================================================== */
 .layout--mysingle{
+
+
+
   .page__related{
     border-top: none;
     margin-top: 0;
-    background-color: #f5f7f9;
     clear: unset;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: -300px;
+    visibility: hidden;
+    transition: left 0.3s;
+    border-right: solid 1px #efefef;
 
     .page__related-title{
-      margin: 1em 0 1em 1em;
+      margin: 1em 0 0.5em 1em;
       font-size: 0.625rem;
     }
 
+    .grid__wrapper{
+      border-bottom: solid 1px #efefef;
+
+      &:last-of-type{
+        border-bottom: none;
+      }
+    }
+
+    h3{
+      margin: 1em 0 0.25em 1em;
+      font-size: 0.75rem;
+      padding: 0.2em 0.75em;
+      border-radius: 2em;
+      background-color: #eee;
+      display: inline-block;
+    }
+
     .grid__item{
+      float: unset;
       background-color: transparent;
       width: 100%;
       box-shadow: none;
-      border-bottom: solid 1px #efefef;
-      border-radius: 0;
       margin: 0;
       padding: 0.5em 1em;
 
       &:hover{
-        background-color: rgba(0,0,0,0.1);
-        transition: background-color 0.25s;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.25s;
       }
 
       .archive__item-title{

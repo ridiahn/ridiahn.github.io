@@ -66,13 +66,16 @@ layout: default
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
     <div class="page__related">
-      <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h4>
-      <div class="grid__wrapper">
-        {% capture category %}{{ page.categories | first }}{% endcapture %}
-        {% for post in site.categories[category] limit: 5 %}
-          {% include archive-single.html type="grid" %}
+      <h4 class="page__related-title">관련 포스트</h4>
+        {% for tag in page.tags %}
+          <div class="grid__wrapper">
+            {% assign tags = page.tags[forloop.index0] %}
+            <h3>{{tags}}</h3>
+            {% for post in site.tags[tags] %}
+              {% include archive-single.html type="grid" %}
+            {% endfor %}
+          </div>
         {% endfor %}
-      </div>
     </div>
   {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
   
@@ -90,3 +93,4 @@ layout: default
     </div>
   {% endif %}
 </div>
+<script src="{{ './assets/js/mysingle.js' | relative_url }}"></script>

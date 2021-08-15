@@ -101,14 +101,15 @@
 
   .namecard{
     width: 100%;
-    clear: both;
-    overflow: hidden;
+    >div{
+      display: flex;
+    }
 
     .author__content{
       font-size: 0.625rem;
-      float: left;
+      flex: 1;
       text-align: left;
-      width: 50%;
+      padding-left: 0;
 
       h3{
         margin-top: 0.5em;
@@ -130,7 +131,7 @@
         }
       }
       .author__bio{
-        margin: 0.75em 0 2em;
+        margin: 0.5em 0;
 
         p{
           font-size: 0.625rem;
@@ -140,10 +141,13 @@
       }
     }
 
-  .author__urls{
-    float: right;
-    text-align: right;
+  .author__urls-wrapper{
+    height: 32px;
+  }
 
+  .social-icons{
+    text-align: right;
+    margin: 0;
     li{
       margin-bottom: 0;
       width: 32px;
@@ -159,6 +163,7 @@
       &:last-of-type{
         visibility: hidden;
         width: 0;
+        margin: 0;
       }
 
       a{
@@ -183,7 +188,7 @@
 
   .page__footer-copyright{
     text-align: right;
-    margin-top: -2em;
+    margin-top: -0.5em;
     font-size: 0.625rem;
     color: #ccc;
   }

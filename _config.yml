@@ -227,6 +227,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-archives
+  - jekyll-last-modified-at
   #- cat-pagination
 
 # mimic GitHub Pages with --safe
