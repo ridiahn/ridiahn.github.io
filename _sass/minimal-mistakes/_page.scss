@@ -648,10 +648,7 @@ body {
         width: calc( 100% - 550px );
         padding-right: 0;
         box-sizing: border-box;
-
-        .page__inner-wrap{
-          padding-left: 2em;
-        }
+        padding-left: 2em;
       }
 
       .sidebar__right{
@@ -807,7 +804,6 @@ body {
     #utterances-comments{
       >.utterances{
         @include breakpoint($large){
-          margin-left: 2em;
           width: 100%;
           max-width: 100%;
         }
