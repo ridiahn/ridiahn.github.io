@@ -680,7 +680,7 @@ body {
           font-size: 0.625rem;
         }
 
-      &:first-of-type{
+      &.last_modified{
         &::after{
           margin: 0 0.5em 0 0.25em;
           padding-right: 0.5em;

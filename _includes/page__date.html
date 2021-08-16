@@ -2,7 +2,7 @@
 <p class="page__date">  
   <i class="far fa-clock" aria-hidden="true"></i>
   {% if page.last_modified_at %}
-  <span>{{ site.data.ui-text[site.locale].last_date_label | default: "Updated" }} <time datetime="{{ page.last_modified_at | date: "%Y-%m-%d" }}">{{ page.last_modified_at | date: "%F" }}</time></span>
+  <span class="last_modified">{{ site.data.ui-text[site.locale].last_date_label | default: "Updated" }} <lastmod>{{ page.last_modified_at | date: "%F" }}</lastmod></span>
   {% endif %}
   <span>{{ site.data.ui-text[site.locale].date_label | default: "wirte" }} <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%F" }}</time></span>
 
