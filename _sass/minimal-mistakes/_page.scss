@@ -599,7 +599,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    position: relative;
 
     .page{
       width: 100%;
@@ -621,7 +620,9 @@ body {
     @include breakpoint($medium){
         padding-left: 4em ;
         .page{
-        .page__inner-wrap{          
+        .page__inner-wrap{  
+          position: relative;
+               
           >*:not(.sidebar__right){
             width: calc( 100% - 180px );
           }
