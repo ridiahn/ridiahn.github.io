@@ -832,6 +832,7 @@ body {
         @include breakpoint($large){
           width: calc( 100% - 200px );
           max-width: 100%;
+          margin: 0;
         }
       }
     }
