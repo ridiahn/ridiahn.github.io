@@ -622,7 +622,7 @@ body {
         .page{
         .page__inner-wrap{  
           position: relative;
-               
+
           >*:not(.sidebar__right){
             width: calc( 100% - 180px );
           }
@@ -830,7 +830,7 @@ body {
     #utterances-comments{
       >.utterances{
         @include breakpoint($large){
-          width: 100%;
+          width: calc( 100% - 200px );
           max-width: 100%;
         }
       }
