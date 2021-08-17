@@ -883,14 +883,14 @@ body {
     border-top: 0;
   }
 
-  #utterances-comments{
-    >.utterances{
-      @include breakpoint($large){
-        width: $content-width;
-        max-width: 100%;
-        margin: 0 auto;
+    #utterances-comments{
+      >.utterances{
+        @include breakpoint($large){
+          width: $content-width;
+          max-width: 100%;
+          margin: 0 auto;
+        }
       }
     }
   }
-}
 } 
