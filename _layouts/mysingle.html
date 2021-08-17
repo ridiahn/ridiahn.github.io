@@ -24,8 +24,8 @@ layout: default
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
-          {% include category-list.html %}
           {% include post-title.html %}
+          {% include page__taxonomy.html %}
           {% include page__date.html %}
         </header>
       {% endunless %}
@@ -35,36 +35,47 @@ layout: default
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
-      <footer class="page__meta flex">
+      <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
-
-        {% if site.tag_archive.type and page.tags[0] %}
-          {% include tag-list.html %}
-        {% endif %}
-
-        {% if page.share %}{% include social-share.html %}{% endif %}
+        {% include mypagination.html %}
+        
+        {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
+        {% include page_related.html %}
       </footer>
-
-      {% include mypagination.html %}
     </div>
     {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
       {% include comments.html %}
     {% endif %}
   </article>
 
-  {% if page.toc %}
   <aside class="sidebar__right">
+    {% if page.share %}
+      {% include social-share.html %}
+    {% endif %}
+    {% if page.toc %}
     <nav class="toc {% if page.toc_sticky %}sticky{% endif %}">
       <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'stream' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
       {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
     </nav>
+    {% endif %}
   </aside>
   <script src="{{ './assets/js/post_toc.js' | relative_url }}"></script>
-  {% endif %}
-
-  {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
-  {% include page_related.html %}
 </div>
+
+<script>
+  let tagblock = document.getElementsByClassName("tag-list")[0].children[1];
+  let relatedList = document.getElementsByClassName("page__related")[0];
+
+  //헤더 태그 클릭시 아래 태그와 관련포스트 추천영역으로 이동
+  tagblock.addEventListener('click', function(){
+    window.scrollTo({top:relatedList.offsetTop, left:0, behavior:'smooth'});
+  });
+
+  let shareBtn = document.getElementsByClassName("page__share-title")[0];
+  shareBtn.addEventListener('click', function(){
+    this.nextElementSibling.classList.toggle("show");
+  });
+</script>
 

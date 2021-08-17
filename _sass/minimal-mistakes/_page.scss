@@ -599,39 +599,32 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
+    position: relative;
+    padding: 0;
+    max-width: 100%;
 
     .page{
       width: 100%;
       margin: 0 auto;
     }
     
-    .page__related.archive{
-      left: 300px;
+    .page__related{
+      width: 100%;
     }
 
     .sidebar__right{
       padding-top: 0.5em;
-
-      @media screen and (min-width:$medium){
-        padding-top: 2em;
-      }
     }
 
     @include breakpoint($medium){
-        padding-left: 4em ;
         .page{
         .page__inner-wrap{  
           position: relative;
 
-          >*:not(.sidebar__right){
-            width: calc( 100% - 180px );
-          }
-
           .sidebar__right{
             position: absolute;
-            margin-right: 0;
-            padding-left: 0;
-            margin-left: 0;
+            margin: 0;
+            padding: 2em 0 0 1em;
             top: 0;
             right: 0;
             height: 100%;
@@ -643,47 +636,45 @@ body {
     }
 
     @include breakpoint($large){
-      padding: 0;
-      max-width: 100%;
-
-      .page__related{
-        position: relative;
-        visibility: visible;
-        width: 300px;
-        height: unset;
-        left: 0;
-      }
+      $side-width: 280px;
 
       .page{
-        max-width: calc( 100% - 300px ); 
-        width: 100%;
-        padding-right: 0;
+        width: $medium-wide; 
         box-sizing: border-box;
-        padding-left: 2em;
+      
+        .page__inner-wrap{     
+          width: inherit;
+          margin-left: calc( #{$side-width} / 2 );
 
-        .page__inner-wrap{          
           >*:not(.sidebar__right){
-            float: left;
-            width: calc( 100% - 220px );
+            width: 700px;
+            margin-right: $side-width;
+            float: unset;
           }
 
           .sidebar__right{
-            max-width: 200px;
+            padding-left: 1em;
+            max-width: $side-width;
           }
         }
       }
     }
-  }
 
-  .flex{
-    display: flex;
-    flex-wrap: wrap;
-    float: unset !important;
+    @include breakpoint($x-large){
+      .page__related{
+        left: unset;
+        right: 0;
+      }
+    }
   }
 
   .page__date{
+    display: inline-flex;
+    align-self: flex-end;
     font-size: 0;
     color: #999;
+    align-items: center;
+
     i{
       margin-right: 0.25em;
       font-size: 0.625rem;
@@ -724,8 +715,16 @@ body {
     border-bottom: solid 1px #efefef;
     margin-bottom: 2rem;
     padding-bottom: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+
+    h1{
+      order:2;
+      margin-bottom: .25em;
+    }
 
     hgroup{
+      order:2;
       h1{
         font-size: $h-size-6;
       }
@@ -733,14 +732,20 @@ body {
         font-size: $h-size-1;
       }
     }
-    >p.tag-list{
-      display: none;
-      width: 0;
+
+    >*:not(.tag-list, .page__date){
+      width: 100%;
+    }
+    .tag-list, 
+    .page__date{
+      order: 3;
     }
   }
 
   .category-list{
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    order: 1;
+
     > strong{
       font-size: 0;
       margin-right: 0;
@@ -753,6 +758,7 @@ body {
         background-color: black;
       }
     }
+
     .page__taxonomy-item {
       padding: 0;
       border: 0;
@@ -760,81 +766,128 @@ body {
     }
   }
 
-.page__inner-wrap > footer{
-  display: flex;
+.tag-list{
+  flex: 1;
+  display: inherit;
+  align-items: center;
+  margin: 0;
 
-  .tag-list{
-    flex: 1;
-    display: inherit;
-    align-items: center;
+  span{
+    display: inline-block;
+    cursor: pointer;
+  }
 
-    > strong{
-      font-size:0.625rem;
+  > strong{
+    font-size:0.625rem;
 
-      i{
-        font-size: 0;
-      }
-    }
-
-    .page__taxonomy-item {
-      font-size: $type-size-6;
-      margin-bottom: 0;
-      padding: 5px 10px;
-      text-decoration: none;
-      border: 0;
-      background-color: #efefef;
-      border-radius: 2rem;
+    i{
+      font-size: 0;
     }
   }
 
-  .page__share {
-    float: unset !important;
-    width: unset !important;
-    display: inline-block;
-    border-top: 0;
-    padding-top: 0;
-    margin-top: 0;
+  .page__taxonomy-item {
+    font-size: $type-size-6;
+    margin-bottom: 0;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 0;
+    background-color: #efefef;
+    border-radius: 2rem;
+  }
+}
 
-    .page__share-title{
-      margin-top: 0;
-      display: inline-block;
-      font-size: 0.625rem;
+.sidebar__right > .page__share {
+  float: unset !important;
+  width: unset !important;
+  display: inline-block;
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+  bottom: 64px;
+  right: 0;
+  top: 1em;
+  position: sticky;
+
+  .page__share-title{
+    margin-top: 0;
+    font-size: 0;
+    display: inline-block;
+    border: solid 1px #efefef;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+
+    i{
+      display: inline;
+      font-size:$type-size-7;
+      line-height: 40px;
     }
 
-    a.btn{
-      background: none;
-      color: #999;
-      padding: 0.5rem 0.25rem;
-      i {
-        font-size:$type-size-3; 
-      }
-      i + span{
-        font-size: 0;
+    &::after{
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      padding: 1rem 3rem 1rem 1rem;
+    }
+
+    &:hover{
+      background-color: black;
+      color: white;
+      transition: 0.4s;
+    }
+  }
+
+  span{
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  span.show,
+  .page__share-title:hover + span{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.25s;
+  }
+
+  a.btn{
+    background: none;
+    color: #999;
+    padding: 0.5rem 0.25rem;
+
+    i{
+      font-size:$type-size-6; 
+    }
+
+    i + span{
+      font-size: 0;
+    }
+  }
+}
+.page__content{
+  h3:first-of-type{
+    margin-top: 0;
+  }
+}
+
+.page__comments{
+  .page__comments-title{
+    font-size: 0;
+    margin: 0;
+    padding-top: 1em;
+  }
+
+  #utterances-comments{
+    >.utterances{
+      @include breakpoint($large){
+        width: calc( 100% - 200px );
+        max-width: 100%;
+        margin: 0;
       }
     }
   }
 }
-  .page__content{
-    h3:first-of-type{
-      margin-top: 0;
-    }
-  }
-
-  .page__comments{
-    .page__comments-title{
-      font-size: 0;
-      margin: 0;
-      padding-top: 1em;
-    }
-  
-    #utterances-comments{
-      >.utterances{
-        @include breakpoint($large){
-          width: calc( 100% - 200px );
-          max-width: 100%;
-          margin: 0;
-        }
-      }
-    }
-  }
 } 

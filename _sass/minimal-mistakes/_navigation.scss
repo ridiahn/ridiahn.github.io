@@ -575,8 +575,10 @@
   .toc{
     border-left: solid 1px #efefef;
     border-radius: 0;
+    top: 3.5em;
 
       header{
+      margin-top: 0.5em;
       font-size: 0.625rem;
       
       .nav__title{
@@ -614,18 +616,18 @@
     border-radius: 4px;
   }
 
-  .page__meta + .pagination{
-    margin-top: 1em;
+  .pagination{
+    margin: 1em 0;
     padding-top: 0;
-    padding-bottom: 2em;
     border-top: 0;
 
     .pagination--pager{
       font-size: 0.625rem;
       font-weight: normal;
       color: #999;
-      padding: 1.25em 1.5em;
-      border-color: #e2e2e2;
+      padding: 1.25em 0;
+      border: 0;
+      border-radius: 0;
       min-height: 68px;
       display: inline-flex;
       flex-direction: column;
@@ -636,6 +638,7 @@
         background-color: unset;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
         color: $primary-color;
+
         span{
           color: $text-color;
         }
@@ -644,8 +647,9 @@
       span{
         display: block;
         font-weight: bold;
-        font-size: .75rem;
-        color: $muted-text-color;
+        font-size: 1rem;
+        letter-spacing: -0.5px;
+        color: $text-color;
 
         &.disabled{
           font-weight: normal;
