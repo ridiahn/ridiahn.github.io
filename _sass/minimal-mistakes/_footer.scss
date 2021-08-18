@@ -92,10 +92,11 @@
   border-top: solid 1px #efefef;
   margin-top: 0;
   background-color: transparent;
+  position: relative;
+  z-index: 0;
   
   footer{
     max-width: 100%;
-    margin-top: 2em;
     box-sizing: border-box;
   }
 
@@ -148,6 +149,7 @@
   .social-icons{
     text-align: right;
     margin: 0;
+    
     li{
       margin-bottom: 0;
       width: 32px;

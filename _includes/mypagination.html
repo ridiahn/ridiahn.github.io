@@ -18,26 +18,39 @@
 {% if prev_post or next_post %}
   <nav class="pagination">
     {% if prev_post %}
-      <a href="{{ prev_post.url }}" class="pagination--pager">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}
+      <a href="{{ prev_post.url }}" class="pagination--pager">
+        {{ site.data.ui-text[site.locale].pagecategory_previous | default: "Previous in category" }}글
         <span>{{prev_post.title }}</span>
       </a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}
+      <a href="#" class="pagination--pager disabled">
+        {{ site.data.ui-text[site.locale].pagecategory_previous | default: "Previous in category" }}
         <span class="disabled">이전글이 없습니다</span>
       </a>
     {% endif %}
     {% if next_post %}
-      <a href="{{ next_post.url }}" class="pagination--pager">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}
+      <a href="{{ next_post.url }}" class="pagination--pager">
+        {{ site.data.ui-text[site.locale].pagecategory_next | default: "Next in category" }}
         <span>{{next_post.title }}</span>
       </a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}
+      <a href="#" class="pagination--pager disabled">
+        {{ site.data.ui-text[site.locale].pagecategory_next | default: "Next in category" }}
         <span class="disabled">다음글이 없습니다</span>
       </a>
     {% endif %}
   </nav>
   {% else %}
-    <div class="pagination_disabled">다른글이 없습니다</div>
+    <nav class="pagination disabled">
+      <a href="#" class="pagination--pager disabled">
+        {{ site.data.ui-text[site.locale].pagecategory_previous | default: "Previous in category" }}
+        <span class="disabled">이전글이 없습니다</span>
+      </a>
+      <a href="#" class="pagination--pager disabled">
+        {{ site.data.ui-text[site.locale].pagecategory_next | default: "Next in category" }}
+        <span class="disabled">다음글이 없습니다</span>
+      </a>
+    </nav>
 {% endif %}
 
 <!-- {% if page.previous_in_category %}

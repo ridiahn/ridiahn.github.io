@@ -599,7 +599,9 @@ ko: &DEFAULT_KO
   skip_content               :
   skip_footer                :
   page                       : "페이지"
+  pagecategory_previous      : "카테고리 이전글"
   pagination_previous        : "이전"
+  pagecategory_next          : "카테고리 다음글"
   pagination_next            : "다음"
   breadcrumb_home_label      : "Home"
   breadcrumb_separator       : "/"

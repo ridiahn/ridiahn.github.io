@@ -1,16 +1,7 @@
-/* _variables.scss -> $medium: 768px;*/
-let bp = 768;
+/* _variables.scss -> $wide-medium: 980px;*/
+let bp = 980;
 let rightSide = document.getElementsByClassName("sidebar__right")[0];
-let page_inner =  document.getElementsByClassName("page__inner-wrap")[0];
-let pageHeader = page_inner.getElementsByTagName("header")[0];
-
-window.onload = function(){
-  postioningToc();
-}
-
-window.onresize = function(){
-  postioningToc();
-};
+let pageHeader = document.getElementsByClassName("page")[0].getElementsByTagName("header")[0];
 
 function postioningToc(){
   var screenWidth = window.innerWidth;
@@ -19,6 +10,10 @@ function postioningToc(){
     pageHeader.append(rightSide);
   } else {
     /*desktop screen*/
-    page_inner.append(rightSide);
+    pageHeader.after(rightSide);
   }
-}
+}postioningToc();
+
+window.onresize = function(){
+  postioningToc();
+};

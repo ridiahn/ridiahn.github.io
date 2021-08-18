@@ -30,6 +30,16 @@ layout: default
         </header>
       {% endunless %}
 
+      {% if page.toc %}
+      <aside class="sidebar__right">
+        <nav class="toc {% if page.toc_sticky %}sticky{% endif %}">
+          <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'stream' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
+          {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
+        </nav>
+        <script src="{{ './assets/js/post_toc.js' | relative_url }}"></script>
+      </aside>
+      {% endif %}
+
       <section class="page__content" itemprop="text">
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
@@ -39,6 +49,11 @@ layout: default
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
+
+        {% if page.share %}
+          {% include social-share.html %}
+        {% endif %}
+
         {% include mypagination.html %}
         
         {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
@@ -49,26 +64,12 @@ layout: default
       {% include comments.html %}
     {% endif %}
   </article>
-
-  <aside class="sidebar__right">
-    {% if page.share %}
-      {% include social-share.html %}
-    {% endif %}
-    {% if page.toc %}
-    <nav class="toc {% if page.toc_sticky %}sticky{% endif %}">
-      <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'stream' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
-      {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
-    </nav>
-    {% endif %}
-  </aside>
-  <script src="{{ './assets/js/post_toc.js' | relative_url }}"></script>
 </div>
 
 <script>
+  //헤더 태그 클릭시 아래 태그와 관련포스트 추천영역으로 이동
   let tagblock = document.getElementsByClassName("tag-list")[0].children[1];
   let relatedList = document.getElementsByClassName("page__related")[0];
-
-  //헤더 태그 클릭시 아래 태그와 관련포스트 추천영역으로 이동
   tagblock.addEventListener('click', function(){
     window.scrollTo({top:relatedList.offsetTop, left:0, behavior:'smooth'});
   });
@@ -77,5 +78,18 @@ layout: default
   shareBtn.addEventListener('click', function(){
     this.nextElementSibling.classList.toggle("show");
   });
+
+  function resetlayout(){
+    let rightSide = document.getElementsByClassName("sidebar__right")[0];
+    let _page = document.getElementsByClassName("page")[0];
+    let page_wrap = document.getElementsByClassName("page__inner-wrap")[0];
+    
+  if( rightSide == undefined && rightSide == null ){
+      _page.style.paddingLeft = "0";
+      _page.style.width = "720px";
+      page_wrap.style.display = "unset";
+    } 
+  }resetlayout()
+
 </script>
 
