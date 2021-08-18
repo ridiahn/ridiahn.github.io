@@ -595,6 +595,8 @@ body {
 }
 
 .layout--mysingle{
+  $side-width: 280px;
+  $content-width: 700px;
   #main{
     display: flex;
     flex-wrap: wrap;
@@ -636,9 +638,6 @@ body {
     }
 
     @include breakpoint($large){
-      $side-width: 280px;
-      $content-width: 700px;
-
       .page{
         width: $medium-wide; 
         box-sizing: border-box;
