@@ -622,6 +622,10 @@
     padding-top: 0;
     background-color: white;
     height: 54px;
+
+    &:hover{
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+    }
     
     .pagination--pager{
       height: inherit;
@@ -635,7 +639,6 @@
 
       &:hover{
         background-color: unset;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
 
         span{
           text-decoration: underline;
