@@ -573,7 +573,6 @@
    ========================================================================== */
 .layout--mysingle{
   .toc{
-    border-left: solid 1px #efefef;
     border-radius: 0;
 
       header{
@@ -582,25 +581,34 @@
       
       .nav__title{
         font-size: 0.625rem;
-        padding: 0 0 0.5em 0.75em;
+        padding: 0 0 0.5em 0;
         font-weight: bold;
         color: #999;
+
+        i{
+          font-size: 0;
+        }
       }
     }
 
     .toc__menu{
+      border-left: solid 1px #efefef;
+      margin-left: 0.5em;
+
       a{
         padding-left: 1.5em;
         font-weight: normal;
         font-size: 0.625rem;
         color: mix(#fff, $text-color, 50%);
         border-bottom: 0;
+        padding: 0.25em 0.75em;
+        position: relative;
       }
 
       .active a{
         background: none;
         color: $text-color;
-        border-left: solid 1px $text-color;
+        text-decoration: underline;
       }
     }
   }
